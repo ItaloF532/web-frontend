@@ -1,0 +1,11 @@
+.social-medias {
+  display: flex;
+  padding: 5px;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+.social-medias a {
+  margin: 5px;
+}
+
