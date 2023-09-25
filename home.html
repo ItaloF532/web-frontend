@@ -1,39 +1,66 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="modules/menu/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
 
     <title>Some webpage</title>
   </head>
   <body>
-    
     <header>
       <h1>Some webpage</h1>
-      
-      <div include="./modules/menu/menu.html"></div>
+
+      <div>
+        <div id="menu">
+          <img
+            src="./assets/svg/hamburguer_menu.svg"
+            alt="Menu"
+            width="16"
+            height="16"
+          />
+          Menu
+        </div>
+
+        <div id="menu-items">
+          <p> Create post </p>
+          <p> Search post </p>
+        </div>
+      </div>
 
       <div class="social-medias">
-        <a target=”blank”
-          href="https://instagram.com/who.am.italo?igshid=NzZlODBkYWE4Ng==">
-          <img src="assets/svg/instagram-icon.svg" alt="Instagram Icon" height="20"
-            width="20" />
+        <a
+          target="”blank”"
+          href="https://instagram.com/who.am.italo?igshid=NzZlODBkYWE4Ng=="
+        >
+          <img
+            src="assets/svg/instagram-icon.svg"
+            alt="Instagram Icon"
+            height="20"
+            width="20"
+          />
         </a>
 
-        <a target=”blank” href="https://github.com/ItaloF532">
-          <img src="assets/svg/github-icon.svg" alt="GitHub Icon" height="20"
-            width="20" />
+        <a target="”blank”" href="https://github.com/ItaloF532">
+          <img
+            src="assets/svg/github-icon.svg"
+            alt="GitHub Icon"
+            height="20"
+            width="20"
+          />
         </a>
 
-        <a target=”blank” href="https://www.linkedin.com/in/italo532/">
-          <img src="assets/svg/linkedin-icon.svg" alt="LinkedIn Icon" height="20"
-            width="20" />
+        <a target="”blank”" href="https://www.linkedin.com/in/italo532/">
+          <img
+            src="assets/svg/linkedin-icon.svg"
+            alt="LinkedIn Icon"
+            height="20"
+            width="20"
+          />
         </a>
       </div>
     </header>
 
-    <script type="module" src="./index.js"> </script>
+    <script type="module" src="./posts/scripts/toggleMenu.js"></script>
   </body>
 </html>
