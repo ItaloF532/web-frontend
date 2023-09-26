@@ -43,7 +43,7 @@ header h1 {
 #menu {
   top: 12px;
   left: 12px;
-  width: 8vmax;
+  width: 100px;
   border: 1px solid #c1c1c1;
   cursor: pointer;
   display: flex;
@@ -66,17 +66,23 @@ header h1 {
 }
 
 #menu-items {
-  width: 12vmax;
-  z-index: 1;
   top: 48px;
   left: 12px;
   display: none;
-  padding: 0px 8px;
   position: absolute;
-  background-color: #f1f1f1;
   box-shadow: 0px 8px 16px 0px #c1c1c1;
   flex-direction: column;
-  justify-content: space-evenly;
+  background-color: #f1f1f1;
+}
+
+#menu-items p {
+  margin: 0px 8px;
+  padding: 16px 12px;
+}
+
+#menu-items p:first-child {
+  border-radius: 2px;
+  border-bottom: 1px solid #c1c1c1;
 }
 
 @media (max-width: 360px) {
@@ -84,7 +90,7 @@ header h1 {
     top: auto;
     left: auto;
     margin-top: -16px;
-    margin-left: -14px;
+    margin-left: -22px;
     position: absolute;
   }
 }
