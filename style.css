@@ -137,9 +137,9 @@ header h1 {
 }
 
 .form-field {
+  width: 100%;
   display: flex;
-  align-self: flex-start;
-  align-items: flex-start;
+  align-items: stretch;
   flex-direction: column;
   justify-content: center;
 }
@@ -151,7 +151,6 @@ header h1 {
 }
 
 .form-field input {
-  width: 98%;
   padding: 10px;
   margin-bottom: 16px;
 }
@@ -162,10 +161,10 @@ header h1 {
 }
 
 button[type="submit"] {
-  background-color: #007BFF;
   color: #fff;
-  padding: 10px 20px;
   border: none;
-  border-radius: 4px;
   cursor: pointer;
+  padding: 12px 24px;
+  border-radius: 4px;
+  background-color: #007BFF;
 }
