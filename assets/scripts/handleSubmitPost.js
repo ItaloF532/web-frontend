@@ -1,7 +1,7 @@
 import Post from "../../posts";
 import { hideErrorMessage, updatePostModalDisplay } from "./handlePostModal";
 
-const postController = new Post();
+const postController = Post.getInstance();
 
 export function handleSubmitPost() {
   const postForm = document.getElementById("post-form");

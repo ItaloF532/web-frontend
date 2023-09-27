@@ -3,6 +3,12 @@ import StorageProvider from "../storage-provider";
 
 class Post {
   _storage = new StorageProvider();
+  instance;
+  
+  static getInstance() {
+    if(!instance) this.instance = new Post();
+    return this.instance;
+  }
 
   _validateCreatePost(title, desc) {
     if (title.trim() === "") return "Title is required!";
