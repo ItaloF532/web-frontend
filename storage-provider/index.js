@@ -1,4 +1,4 @@
-class Storage {
+class StorageProvider {
   _storage = sessionStorage;
 
   save(key, data) {
@@ -14,4 +14,4 @@ class Storage {
   }
 }
 
-export default Storage;
+export default StorageProvider;
