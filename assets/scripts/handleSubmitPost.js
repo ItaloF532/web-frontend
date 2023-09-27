@@ -25,7 +25,6 @@ export function handleSubmitPost() {
       errorMessages.appendChild(errorElement);
     } else {
       updatePostModalDisplay("none");
-      console.log(postController.getPosts());
       postForm.reset();
     }
   });
