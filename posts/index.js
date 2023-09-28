@@ -2,11 +2,12 @@ import { POSTS_KEY } from "../constants";
 import StorageProvider from "../storage-provider";
 
 class Post {
-  _storage = new StorageProvider();
   instance;
-  
+  _events = {};
+  _storage = new StorageProvider();
+
   static getInstance() {
-    if(!instance) this.instance = new Post();
+    if (!this.instance) this.instance = new Post();
     return this.instance;
   }
 
@@ -28,7 +29,7 @@ class Post {
 
   _savePost(title, desc) {
     const posts = this.getPosts();
-    
+
     const newPost = {
       index: posts.length - 1,
       title,
@@ -64,6 +65,19 @@ class Post {
 
       return post.title === title;
     });
+  }
+
+  subscribe(event, callback) {
+    if (!this.events[event]) this.events[event] = [];
+    this.events[event].push(callback);
+  }
+
+  publish(event, data) {
+    if (this.events[event]) {
+      this.events[event].forEach(callback => {
+        callback(data);
+      });
+    }
   }
 }
 
