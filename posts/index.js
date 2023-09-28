@@ -3,6 +3,8 @@ import StorageProvider from "../storage-provider";
 
 class Post {
   instance;
+  searchedTitle = '';
+  searchedDate = '';
   _events = {};
   _storage = new StorageProvider();
 
@@ -24,12 +26,13 @@ class Post {
 
   getPosts() {
     const postsJson = this._storage.recover(POSTS_KEY);
-    return postsJson ? JSON.parse(postsJson) : [];
+    const posts = JSON.parse(postsJson);
+    return JSON.parse(posts ?? '[]') ?? [];
   }
 
   _savePost(title, desc) {
     const posts = this.getPosts();
-
+  
     const newPost = {
       index: posts.length - 1,
       title,
@@ -45,17 +48,22 @@ class Post {
   createPost(title, desc) {
     const error = this._validateCreatePost(title, desc);
     if (error) return error;
-
+    
     this._savePost(title, desc);
+    this.publish('created-post')
   }
 
   deletePost(index) {
     const posts = this.getPosts();
     posts.splice(index, 1);
     this._storage.save(POSTS_KEY, posts);
+    this.publish('deleted-post', index)
   }
 
   searchPost(title, date) {
+    this.searchedDate = date;
+    this.searchedTitle = title;
+    
     return this.getPosts().filter((post) => {
       if (date) {
         return (
@@ -68,13 +76,14 @@ class Post {
   }
 
   subscribe(event, callback) {
-    if (!this.events[event]) this.events[event] = [];
-    this.events[event].push(callback);
+    if (!this._events[event]) this._events[event] = [];
+    this._events[event].push(callback);
   }
 
   publish(event, data) {
-    if (this.events[event]) {
-      this.events[event].forEach(callback => {
+    const shouldPublish = this._events?.[event];
+    if (shouldPublish) {
+      this._events[event].forEach(callback => {
         callback(data);
       });
     }
