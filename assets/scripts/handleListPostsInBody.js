@@ -52,5 +52,4 @@ function handleListPostsInBody() {
   renderAllPosts();
 }
 
-// Render posts on html
 export default handleListPostsInBody();
