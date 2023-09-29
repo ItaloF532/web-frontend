@@ -15,9 +15,9 @@ class Post {
 
   _validateCreatePost(title, desc) {
     if (title.trim() === "") return "Title is required!";
-    if (title.length <= 3) return "Title must have 3 or more characters.";
+    if (title.length < 3) return "Title must have 3 or more characters.";
     if (desc.trim() === "") return "Description is required!";
-    if (desc.length <= 5) {
+    if (desc.length < 5) {
       return "Description must have 5 or more characters.";
     }
 

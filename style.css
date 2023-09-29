@@ -201,6 +201,10 @@ button[type="submit"] {
   font-family: sans-serif;
 }
 
+#errorMessages {
+  color: red;
+}
+
 #close-search-modal {
   top: 10px;
   right: 10px;
