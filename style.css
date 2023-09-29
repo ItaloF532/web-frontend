@@ -201,8 +201,10 @@ button[type="submit"] {
   font-family: sans-serif;
 }
 
+#searchErrorMessage,
 #errorMessages {
   color: red;
+  display: none;
 }
 
 #close-search-modal {
