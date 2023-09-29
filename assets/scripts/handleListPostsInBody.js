@@ -1,6 +1,6 @@
 import Post from "../../posts";
 import deletePost from "./deletePostListener";
-import generateHtmlForPost from './generateHtmlForPost';
+import generateHtmlForPost from "./generateHtmlForPost";
 
 const postController = Post.getInstance();
 const postList = document.getElementById("post-list");
@@ -24,8 +24,8 @@ function handleCreatePost() {
   });
 }
 
-function renderAllPosts() {
-  const allPosts = postController.getPosts();
+export function renderAllPosts(posts) {
+  const allPosts = posts ?? postController.getPosts();
   let generatedHTML = "";
 
   (allPosts ?? []).forEach((post, index) => {
@@ -40,7 +40,7 @@ function renderAllPosts() {
 function addDeleteListenerForPosts() {
   const allPosts = postController.getPosts();
 
-  allPosts.forEach((post, index) => {
+  (allPosts ?? []).forEach((post, index) => {
     if (post) deletePost(index);
   });
 }

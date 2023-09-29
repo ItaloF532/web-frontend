@@ -1,5 +1,9 @@
 import Post from "../../posts";
-import { hideErrorMessage, updatePostModalDisplay } from "./handlePostModal";
+import {
+  hideErrorMessage,
+  resetPostForm,
+  updatePostModalDisplay,
+} from "./handlePostModal";
 
 const postController = Post.getInstance();
 
@@ -25,7 +29,7 @@ export function handleSubmitPost() {
       errorMessages.appendChild(errorElement);
     } else {
       updatePostModalDisplay("none");
-      postForm.reset();
+      resetPostForm();
     }
   });
 }
