@@ -82,6 +82,7 @@ class Post {
 
     if (validate) return validate;
 
+    this.publish('searched', { date, title });
     return this.getPosts().filter((post) => {
       if (date) {
         return (
