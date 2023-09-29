@@ -33,12 +33,17 @@ class Post {
 
   _savePost(title, desc) {
     const posts = this.getPosts() ?? [];
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const correctedMonth = month < 10 ? `0${month}` : month;
+    const day = date.getDate();
 
     const newPost = {
       index: posts.length - 1,
       title,
       desc,
-      date: new Date().toLocaleDateString("en-US"),
+      date: `${year}-${correctedMonth}-${day}`,
     };
 
     posts.push(newPost);
@@ -80,7 +85,7 @@ class Post {
     return this.getPosts().filter((post) => {
       if (date) {
         return (
-          post.title.includes(title) && post.date === date.toLocaleDateString("en-US")
+          post.title.includes(title) && post.date === this.searchedDate
         );
       }
 

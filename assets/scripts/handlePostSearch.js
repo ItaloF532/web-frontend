@@ -1,27 +1,6 @@
-// function handleSearch() {
-//   console.log('handle on search');
-//   let newPostList = [];
-//   let generatedHTML = "";
-//   postList.innerHTML = null;
-
 import Post from "../../posts";
 import { renderAllPosts } from "./handleListPostsInBody";
-import { hideErrorMessage } from "./handlePostModal";
 
-//   if (search?.trim != "") {
-//     newPostList = postController.searchPost(search);
-
-//     newPostList.array.forEach((post, index) => {
-//       generatedHTML += `
-//         <div id="post-${index}" class="post">
-//           <h2> ${post?.title ?? "Error on get title"} </h2>
-//           <span> ${post?.date ?? "Error o get date"} </span>
-//           <p> ${post?.desc ?? "Error on get description"} </p>
-//         </div>
-//       `;
-//     });
-//   }
-// }
 const searchForm = document.getElementById("search-form");
 const searchModal = document.getElementById("search-modal");
 const postController = Post.getInstance();
@@ -38,7 +17,7 @@ export function resetSearchForm() {
 }
 
 export function hideSearchErrorMessage() {
-  searchErrorMessage.style.display = 'none';
+  searchErrorMessage.style.display = "none";
   searchErrorMessage.innerHTML = "";
 }
 
