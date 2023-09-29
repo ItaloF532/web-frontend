@@ -1,4 +1,4 @@
-import Post from "../../posts";
+import Post from "../../posts/index.js";
 
 const postController = Post.getInstance();
 

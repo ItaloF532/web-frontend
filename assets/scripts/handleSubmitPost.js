@@ -1,9 +1,9 @@
-import Post from "../../posts";
+import Post from "../../posts/index.js";
 import {
   hideErrorMessage,
   resetPostForm,
   updatePostModalDisplay,
-} from "./handlePostModal";
+} from "./handlePostModal.js";
 
 const postController = Post.getInstance();
 

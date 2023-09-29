@@ -1,6 +1,6 @@
-import Post from "../../posts";
-import deletePost from "./deletePostListener";
-import generateHtmlForPost from "./generateHtmlForPost";
+import Post from "../../posts/index.js";
+import deletePost from "./deletePostListener.js";
+import generateHtmlForPost from "./generateHtmlForPost.js";
 
 const postController = Post.getInstance();
 const postList = document.getElementById("post-list");

@@ -2,7 +2,7 @@ import {
   hideSearchErrorMessage,
   resetSearchForm,
   updateSearchModalDisplay,
-} from "./handlePostSearch";
+} from "./handlePostSearch.js";
 
 export function handleCloseSearchModal() {
   const searchModal = document.getElementById("search-modal");

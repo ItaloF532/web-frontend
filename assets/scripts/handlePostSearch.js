@@ -1,5 +1,5 @@
-import Post from "../../posts";
-import { renderAllPosts } from "./handleListPostsInBody";
+import Post from "../../posts/index.js";
+import { renderAllPosts } from "./handleListPostsInBody.js";
 
 const searchForm = document.getElementById("search-form");
 const searchModal = document.getElementById("search-modal");

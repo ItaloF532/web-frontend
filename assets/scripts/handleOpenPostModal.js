@@ -1,7 +1,7 @@
 import {
   hideErrorMessage,
   updatePostModalDisplay,
-} from "./handlePostModal";
+} from "./handlePostModal.js";
 
 export function handleOpenPostModal() {
   const openPostModalBtn = document.getElementById("open-post-modal");

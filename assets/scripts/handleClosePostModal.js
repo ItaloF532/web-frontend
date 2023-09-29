@@ -2,7 +2,7 @@ import {
   resetPostForm,
   hideErrorMessage,
   updatePostModalDisplay,
-} from "./handlePostModal";
+} from "./handlePostModal.js";
 
 export function handleClosePostModal() {
   const postModal = document.getElementById("post-modal");

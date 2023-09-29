@@ -1,6 +1,6 @@
-import { handleClosePostModal } from "./handleClosePostModal";
-import { handleOpenPostModal } from "./handleOpenPostModal";
-import { handleSubmitPost } from "./handleSubmitPost";
+import { handleClosePostModal } from "./handleClosePostModal.js";
+import { handleOpenPostModal } from "./handleOpenPostModal.js";
+import { handleSubmitPost } from "./handleSubmitPost.js";
 
 const postForm = document.getElementById("post-form");
 const postModal = document.getElementById("post-modal");

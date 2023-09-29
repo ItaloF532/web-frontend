@@ -1,5 +1,5 @@
-import { POSTS_KEY } from "../constants";
-import StorageProvider from "../storage-provider";
+import { POSTS_KEY } from "../constants/index.js";
+import StorageProvider from "../storage-provider/index.js";
 
 class Post {
   instance;
