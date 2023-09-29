@@ -1,4 +1,8 @@
-import { resetSearchForm, updateSearchModalDisplay } from "./handlePostSearch";
+import {
+  hideSearchErrorMessage,
+  resetSearchForm,
+  updateSearchModalDisplay,
+} from "./handlePostSearch";
 
 export function handleCloseSearchModal() {
   const searchModal = document.getElementById("search-modal");
@@ -7,14 +11,14 @@ export function handleCloseSearchModal() {
   closeSearchModalBtn.addEventListener("click", () => {
     updateSearchModalDisplay("none");
     resetSearchForm();
-    // hideErrorMessage();
+    hideSearchErrorMessage();
   });
 
   window.addEventListener("click", (e) => {
     if (e.target === searchModal) {
       updateSearchModalDisplay("none");
       resetSearchForm();
-      // hideErrorMessage();
+      hideSearchErrorMessage();
     }
   });
 }
