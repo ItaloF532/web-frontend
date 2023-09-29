@@ -25,4 +25,4 @@ function handlePostModal() {
   handleSubmitPost();
 }
 
-export default handlePostModal();
+export default handlePostModal;

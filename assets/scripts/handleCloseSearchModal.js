@@ -23,4 +23,4 @@ export function handleCloseSearchModal() {
   });
 }
 
-export default handleCloseSearchModal();
+export default handleCloseSearchModal;

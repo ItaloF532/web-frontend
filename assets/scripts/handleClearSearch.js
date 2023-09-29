@@ -25,4 +25,4 @@ function handleClearSearch() {
   handleClearButton();
 }
 
-export default handleClearSearch();
+export default handleClearSearch;

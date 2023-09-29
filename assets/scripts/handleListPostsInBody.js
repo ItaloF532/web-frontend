@@ -51,4 +51,4 @@ function handleListPostsInBody() {
   addDeleteListenerForPosts();
 }
 
-export default handleListPostsInBody();
+export default handleListPostsInBody;

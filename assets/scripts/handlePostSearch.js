@@ -58,4 +58,4 @@ function handlePostSearch() {
   handleOpenSearchModal();
 }
 
-export default handlePostSearch();
+export default handlePostSearch;

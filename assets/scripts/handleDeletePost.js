@@ -10,4 +10,4 @@ function handleDeletePost() {
   });
 }
 
-export default handleDeletePost();
+export default handleDeletePost;
