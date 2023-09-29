@@ -61,18 +61,30 @@ class Post {
     this.publish("deleted-post", index);
   }
 
+  _validateSearchPost(title, date) {
+    if (title.trim() === "" && date.trim() === "") {
+      return "You need to fill in at least one of the fields!";
+    }
+
+    return null;
+  }
+
   searchPost(title, date) {
     this.searchedDate = date;
     this.searchedTitle = title;
 
+    const validate = this._validateSearchPost(title, date);
+
+    if (validate) return validate;
+
     return this.getPosts().filter((post) => {
       if (date) {
         return (
-          post.title === title && post.date === date.toLocaleDateString("en-US")
+          post.title.includes(title) && post.date === date.toLocaleDateString("en-US")
         );
       }
 
-      return post.title === title;
+      return post.title.includes(title);
     });
   }
 
